@@ -29,6 +29,7 @@ public class AlienController {
     private Button btnTranslate;
     @FXML
     private Button btnReset;
+    
         
     
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -49,7 +50,8 @@ public class AlienController {
     
     @FXML
     void doReset(ActionEvent event) {
-
+    	txtResult.clear();
+    	txtWord.clear();
     }
     
 }
