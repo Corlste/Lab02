@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AlienDictionary {
 	
-	public List<Word> dictionary;
+	private List<Word> dictionary;
 
 	public AlienDictionary() {
 		this.dictionary = new ArrayList<Word>();
@@ -22,11 +22,15 @@ public class AlienDictionary {
 				return;
 			}
 		}
+		Word word = new Word(alien, trans);
+		dictionary.add(word);
 	}
 	
 	public String translateWord(String alien) {
 		for (Word w:dictionary) {
-			if (w.compare)
+			if (w.compare(alien)) {
+				return w.getTranslation();
+			}
 		}
 		return null;
 		
